@@ -25,7 +25,43 @@ jobs:
        env:
          CYPRESS_RECORD_KEY: e697700f-1286-4537-af4e-710c12a7ca2f 
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+  
+  cypress-e2e-chrome:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Get code
+       uses: actions/checkout@v4.1.7
 
+     - name: cypress run 
+       uses: cypress-io/github-action@v6.5.0
+       with:
+         install-command: yarn install
+         browser: chrome
+         record: true
+         group: UI Chrome
+         spec: ${{ github.event.inputs.spec }}
+       env:
+         CYPRESS_RECORD_KEY: e697700f-1286-4537-af4e-710c12a7ca2f 
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+         
+  cypress-e2e-firefox:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Get code
+       uses: actions/checkout@v4.1.7
+
+     - name: cypress run 
+       uses: cypress-io/github-action@v6.5.0
+       with:
+         install-command: yarn install
+         browser: firefox
+         record: true
+         group: UI Firefox
+         spec: ${{ github.event.inputs.spec }}
+       env:
+         CYPRESS_RECORD_KEY: e697700f-1286-4537-af4e-710c12a7ca2f 
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+ 
 
      
         
