@@ -11,7 +11,7 @@ jobs:
   cypress-e2e-electron:
     runs-on: ubuntu-latest
     container: 
-        image: cypress/browsers:node-20.15.1-chrome-126.0.6478.114-1-ff-127.0.1
+        image: cypress/browsers:node-20.15.1-chrome-126.0.6478.126-1-ff-128.0-edge-126.0.2592.102-1
         options: --user 1001
     steps:
      - name: Get code
@@ -33,7 +33,7 @@ jobs:
     needs: cypress-e2e-electron
     runs-on: ubuntu-latest
     container: 
-        image: cypress/browsers:node-20.15.1-chrome-126.0.6478.114-1-ff-127.0.1
+        image: cypress/browsers:node-20.15.1-chrome-126.0.6478.126-1-ff-128.0-edge-126.0.2592.102-1
         options: --user 1001
     steps:
      - name: Get code
@@ -55,7 +55,7 @@ jobs:
     needs: cypress-e2e-electron
     runs-on: ubuntu-latest
     container: 
-        image: cypress/browsers:node-20.15.1-chrome-126.0.6478.114-1-ff-127.0.1
+        image: cypress/browsers:node-20.15.1-chrome-126.0.6478.126-1-ff-128.0-edge-126.0.2592.102-1
         options: --user 1001
     steps:
      - name: Get code
